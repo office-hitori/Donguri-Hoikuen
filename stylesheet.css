@@ -1,0 +1,440 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+html {
+  font-size: 62.5%; /*==10px*/
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span,
+a,
+ul,
+li,
+small {
+  color: inherit;
+  font-size: inherit;
+  font-weight: normal;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/*--フォント・フォントの色　指定-------------------------------------------*/
+body {
+  font-family: "Kosugi Maru", sans-serif; /*基本の字体*/
+  letter-spacing: 0.04em;
+  color: rgb(37, 14, 4); /*基本の黒*/
+}
+.yusei-magic {
+  font-family: "Yusei Magic", sans-serif; /*マジックで書いたような字体*/
+}
+.brown {
+  color: rgb(56, 23, 8);
+}
+.white {
+  color: rgb(253, 249, 244);
+}
+/*--フォント・フォントの色　指定ここまで-------------------------------------------*/
+body {
+  background-color: rgb(253, 249, 244);
+  display: grid;
+  grid-template:
+    "...... ...... ......" 10px
+    "deco   deco   deco  " 20px
+    "...... ...... ......" 20px
+    "header header header" auto
+    "...... ...... ......" 80px
+    "...... main   ......" auto
+    "...... ...... ......" 80px
+    "footer footer footer" auto
+    / auto 900px auto;
+}
+.deco {
+  grid-area: deco;
+  background-image: url(./img/line_for_top.png);
+  background-size: contain;
+  background-repeat: repeat;
+}
+/*-------------------------------------------------------------------------*/
+/*--HEADER width=100vw-----------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+header {
+  grid-area: header;
+  display: grid;
+  grid-template:
+    "...... logo   phone  ......" 80px
+    "...... ...... ...... ......" 20px
+    "slide  slide  slide  slide " 500px
+    "...... ...... ...... ......" 30px
+    "...... h-menu h-menu ......" 40px
+    / auto 650px 250px auto;
+}
+/*--ヘッダーアッパー---------------------------------------------------------*/
+h1 {
+  grid-area: logo;
+}
+h1 img {
+  height: 100%;
+}
+.header-phone {
+  grid-area: phone;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.phone-message {
+  font-size: 1.3rem;
+}
+.phone-number {
+  font-size: 3.2rem;
+  line-height: 1em;
+}
+.phone-number::before {
+  content: "\f879";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; /*Solid*/
+  font-size: 0.8em;
+}
+/*--スライドショー---------------------------------------------------------*/
+.slide-show {
+  display: none;
+  grid-area: slide;
+  background-color: rgb(155, 202, 100);
+  position: relative;
+}
+#photo-wrapper {
+  margin: 0 auto;
+  width: 1180px;
+}
+.photo {
+  width: 100%;
+  height: 100%;
+}
+.hidden-photo {
+  display: none;
+}
+.message {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  font-size: 4.8rem;
+  font-style: oblique;
+  filter: drop-shadow(5px 5px 2px rgb(37, 14, 4));
+  opacity: 0;
+}
+.slider-wrapper {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.fa-circle {
+  margin: 3px;
+  text-shadow: 1px 1px 2px rgb(56, 23, 8), 0 0 1em rgb(253, 249, 244),
+    0 0 0.2em rgb(253, 249, 244);
+}
+/*--ヘッダーメニュー---------------------------------------------------------*/
+.header-menu {
+  grid-area: h-menu;
+}
+.hamburger {
+  display: none;
+}
+.header-menu ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.6rem;
+}
+.header-menu ul li a {
+  display: block;
+  height: 100%;
+  line-height: 40px;
+  position: relative;
+}
+.header-menu ul li a::before {
+  content: " ";
+  display: inline-block;
+  /* height: 42px;
+  width: 19px; */
+  height: 100%;
+  width: 1em;
+  background-image: url(./img/Donguri_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: -0.4em;
+  left: -1.4em;
+  transition: all 0.1s;
+}
+.header-menu ul li a:hover::before {
+  background-image: url(./img/Donguri_02.png);
+  position: absolute;
+  bottom: 0px;
+}
+/*-------------------------------------------------------------------------*/
+/*ここからMAIN width = 900px--------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+main {
+  grid-area: main;
+  display: grid;
+  grid-template:
+    "info   ...... blog  " auto
+    "...... ...... ......" 80px
+    "about  about  about" auto
+    "...... ...... ......" 80px
+    "tour   tour   tour  " auto
+    / 420px 60px 420px;
+}
+
+.main-title {
+  font-size: 2.4rem;
+}
+.main-title::after {
+  content: ""; /*何も入れない*/
+  display: inline-block; /*忘れずに！*/
+  width: 100%; /*画像の幅*/
+  height: 14px;
+  background-image: url(./img/line_for_h2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.main-title::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; /*Solid*/
+  padding-left: 20px;
+  padding-right: 0.5em;
+}
+.article-wrapper {
+  padding: 0 20px;
+}
+article {
+  display: flex;
+  padding: 20px 0;
+  border-bottom: 1px dotted gray;
+  font-size: 1.4rem;
+}
+article time {
+  padding-right: 40px;
+}
+.article-title:hover {
+  opacity: 0.7;
+}
+
+/*--お知らせ-------------------------------------------------------------------*/
+.info {
+  grid-area: info;
+}
+.info h2::before {
+  content: "\f0a1";
+}
+/*--保育日誌-------------------------------------------------------------------*/
+.blog {
+  grid-area: blog;
+}
+.blog h2::before {
+  content: "\f518";
+}
+/*--ABOUT-------------------------------------------------------------------*/
+.about-us {
+  grid-area: about;
+}
+.big-h2 {
+  margin-top: 30px;
+  font-size: 4.8rem;
+  text-align: center;
+  filter: drop-shadow(0 7px 7px rgba(56, 23, 8, 0.5));
+}
+.introduction-wrapper {
+  margin-top: 50px;
+}
+.introduction-wrapper ul {
+  height: 350px;
+  display: grid;
+  grid-template:
+    "...... i-02   ...... i-04  " 20%
+    "...... i-02   ...... i-04  " 20%
+    "i-01   i-02   i-03   i-04  " 20%
+    "i-01   ...... i-03   ......" 20%
+    "i-01   ...... i-03   ......" 20%
+    /25% 25% 25% 25%;
+}
+.intro01 {
+  grid-area: i-01;
+}
+.intro02 {
+  grid-area: i-02;
+}
+.intro03 {
+  grid-area: i-03;
+}
+.intro04 {
+  grid-area: i-04;
+}
+
+.intro-button {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: 6px rgb(253, 249, 244) double;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  filter: drop-shadow(0 7px 7px rgba(56, 23, 8, 0.5));
+  transition: all 0.3s;
+}
+.intro-button img {
+  height: 40%;
+}
+.intro-button:active {
+  filter: drop-shadow(0 0 2px rgba(56, 23, 8, 0.8));
+  transform: translateY(2px);
+}
+.intro-button01 {
+  background-color: rgb(250, 167, 136);
+}
+.intro-button02 {
+  background-color: rgb(201, 250, 136);
+}
+.intro-button03 {
+  background-color: rgb(250, 136, 136);
+}
+.intro-button04 {
+  background-color: rgb(136, 233, 250);
+}
+/*--バーチャル園内ツアー-----------------------------------------------------------------*/
+.virtual-tour {
+  grid-area: tour;
+}
+.virtual-tour h4 {
+  font-size: 2rem;
+  text-align: center;
+}
+.view-wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.google_view {
+  position: relative;
+  width: 48%;
+  height: 0;
+  padding-top: 36%;
+}
+.google_view iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.virtual-tour p {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  text-align: right;
+}
+/*-------------------------------------------------------------------------*/
+/*--FOOTER-----------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+footer {
+  grid-area: footer;
+  background-color: rgb(97, 69, 56);
+  display: grid;
+  grid-template:
+    " ...... ...... ...... ...... ...... ...... ......" 50px
+    " ...... f-menu ...... f-logo ...... icons  ......" 74px
+    " ...... ...... ...... ...... ...... ...... ......" 50px
+    " f-deco f-deco f-deco f-deco f-deco f-deco f-deco" 20px
+    " ...... ...... ...... ...... ...... ...... ......" 10px
+    " credit credit credit credit credit credit credit" auto
+    " ...... ...... ...... ...... ...... ...... ......" 10px
+    / auto 210px 90px 300px 90px 210px auto;
+  font-weight: lighter;
+}
+.footer-logo {
+  grid-area: f-logo;
+}
+.footer-logo img {
+  width: 100%;
+}
+.footer-icons {
+  grid-area: icons;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-icons a {
+  width: 30%;
+  opacity: 0.5;
+}
+.footer-icons a:hover {
+  opacity: 0.8;
+}
+.footer-menu {
+  grid-area: f-menu;
+}
+.footer-menu ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-menu ul li {
+  font-size: 1.3rem;
+  padding: 5px 0;
+  margin-right: 10px;
+}
+.footer-menu ul li a {
+  opacity: 0.5;
+}
+.footer-menu ul li a:hover {
+  opacity: 0.8;
+}
+.credit {
+  grid-area: credit;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.5;
+}
+.footer-deco {
+  grid-area: f-deco;
+  background-image: url(./img/line_for_bottom.png);
+  background-size: contain;
+  background-repeat: repeat;
+  opacity: 0.8;
+}
+/*-------------------------------------------------------------------------*/
+/*"トップへもどる"ボタン*/
+/*-------------------------------------------------------------------------*/
+.go-to-top {
+  display: none;
+  position: fixed;
+  bottom: 240px;
+  right: 60px;
+  text-align: center;
+  filter: drop-shadow(3px 3px 3px rgba(136, 136, 136, 0.6));
+}
+.go-to-top img {
+  width: 50px;
+}
+.go-to-top p {
+  font-size: 1.3rem;
+}

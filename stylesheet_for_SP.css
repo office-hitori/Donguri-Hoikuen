@@ -1,0 +1,172 @@
+@media (max-width: 767px) {
+  /*基本の文字サイズを変更--------------------*/
+  html {
+    font-size: 50%; /*==8px*/
+  }
+  body {
+    width: 100vw;
+    grid-template:
+      "......" 5px
+      "deco  " 10px
+      "......" 20px
+      "header" auto
+      "......" 40px
+      "main  " auto
+      "......" 80px
+      "footer" auto
+      / 100vw;
+  }
+  header {
+    grid-template:
+      "...... ...... logo   ...... ......" auto
+      "...... ...... ...... ...... ......" 20px
+      "...... ...... phone  ...... ......" auto
+      "...... ...... ...... ...... ......" 20px
+      "slide  slide  slide  slide  slide " auto
+      "...... ...... ...... ...... ......" 5px
+      "...... h-menu h-menu h-menu ......" auto
+      / 5% 15% 60% 15% 5%;
+  }
+  h1 {
+    text-align: center;
+  }
+  h1 img {
+    width: 100%;
+    height: auto;
+  }
+  .header-phone {
+    text-align: center;
+  }
+  .phone-message {
+    /* display: none; */
+  }
+  .phone-number {
+    font-size: 2rem;
+  }
+  .header-menu ul {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .header-menu ul li {
+    width: 33.3%;
+  }
+  .header-menu ul li a {
+    padding-left: 1.5em;
+  }
+  .header-menu ul li a::before {
+    left: 0;
+  }
+  #photo-wrapper {
+    width: 100vw;
+  }
+  .message {
+    font-size: 8vw;
+  }
+  /*-------------------------------------------------------------------------*/
+  /*ここからMAIN width = 900px------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  main {
+    grid-template:
+      "...... info   ......" auto
+      "...... ...... ......" 40px
+      "...... blog   ......" auto
+      "...... ...... ......" 20px
+      "...... about  ......" auto
+      "...... ...... ......" 20px
+      "...... tour ......" auto
+      / 5% 90% 5%;
+  }
+  article {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  .big-h2 {
+    font-size: 5vw;
+  }
+  .introduction-wrapper {
+    margin-top: 30px;
+  }
+  .introduction-wrapper ul {
+    height: auto;
+    display: grid;
+    grid-template:
+      "i-01" auto
+      "...." 10px
+      "i-02" auto
+      "...." 10px
+      "i-03" auto
+      "...." 10px
+      "i-04" auto
+      / 100%;
+  }
+  .intro-button {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 3rem;
+  }
+  .intro-button img {
+    height: 80%;
+    padding: 0 15px;
+  }
+  .view-wrapper {
+    margin-top: 30px;
+    flex-direction: column;
+  }
+  .google_view {
+    width: 100%;
+    padding-top: 75%;
+  }
+  /*-------------------------------------------------------------------------*/
+  /*--FOOTER-----------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  footer {
+    grid-template:
+      " ...... ...... ......" 30px
+      " ...... icons  ......" 50px
+      " ...... ...... ......" 30px
+      " ...... f-menu ......" 30px
+      " ...... ...... ......" 30px
+      " ...... f-logo ......" 50px
+      " ...... ...... ......" 30px
+      " f-deco f-deco f-deco" 10px
+      " ...... ...... ......" 10px
+      " credit credit credit" auto
+      " ...... ...... ......" 10px
+      / 20% 60% 20%;
+
+    /*トップへ戻るボタンに対して*/
+    position: relative;
+  }
+  .footer-icons {
+    justify-content: center;
+  }
+  .footer-icons a {
+    width: 20%;
+    margin: 2.5%;
+  }
+  .footer-menu ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer-menu ul li {
+    margin-right: 0;
+    padding: 0 0.5em;
+    opacity: 0.5;
+  }
+  /*-------------------------------------------------------------------------*/
+  /*"トップへもどる"ボタン*/
+  /*-------------------------------------------------------------------------*/
+  .go-to-top {
+    display: block;
+    position: absolute;
+    top: -60px;
+    right: 5%;
+  }
+  .go-to-top img {
+    width: 30px;
+  }
+} ;
