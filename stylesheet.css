@@ -50,15 +50,15 @@ body {
   background-color: rgb(253, 249, 244);
   display: grid;
   grid-template:
-    "...... ...... ......" 10px
-    "deco   deco   deco  " 20px
-    "...... ...... ......" 20px
-    "header header header" auto
-    "...... ...... ......" 80px
-    "...... main   ......" auto
-    "...... ...... ......" 80px
-    "footer footer footer" auto
-    / auto 900px auto;
+    "......" 10px
+    "deco  " 20px
+    "......" 20px
+    "header" auto
+    "......" 25px
+    "main  " auto
+    "......" 70px
+    "footer" auto
+    / 100vw;
 }
 .deco {
   grid-area: deco;
@@ -75,9 +75,7 @@ header {
   grid-template:
     "...... logo   phone  ......" 80px
     "...... ...... ...... ......" 20px
-    "slide  slide  slide  slide " 500px
-    "...... ...... ...... ......" 30px
-    "...... h-menu h-menu ......" 40px
+    "...... h-menu h-menu ......" 60px
     / auto 650px 250px auto;
 }
 /*--ヘッダーアッパー---------------------------------------------------------*/
@@ -107,11 +105,60 @@ h1 img {
   font-weight: 900; /*Solid*/
   font-size: 0.8em;
 }
+/*--ヘッダーメニュー---------------------------------------------------------*/
+.header-menu {
+  grid-area: h-menu;
+}
+.header-menu ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.6rem;
+}
+.header-menu ul li a {
+  display: block;
+  height: 100%;
+  line-height: 60px;
+  position: relative;
+}
+.header-menu ul li a::before {
+  content: " ";
+  display: inline-block;
+  height: 100%;
+  width: 1em;
+  background-image: url(./img/Donguri_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: -1em;
+  left: -1.4em;
+  transition: all 0.1s;
+}
+.header-menu ul li a:hover::before {
+  background-image: url(./img/Donguri_02.png);
+  position: absolute;
+  bottom: -0.3em;
+}
+/*-------------------------------------------------------------------------*/
+/*ここからMAIN width = 100vw--------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+main {
+  grid-area: main;
+  display: grid;
+  grid-template:
+    "slide  slide  slide  slide  slide " 500px
+    "...... ...... ...... ...... ......" 70px
+    "...... info   ...... blog   ......" auto
+    "...... ...... ...... ...... ......" 70px
+    "about  about  about  about  about " auto
+    "tour   tour   tour   tour   tour  " auto
+    / auto 420px 60px 420px auto;
+}
 /*--スライドショー---------------------------------------------------------*/
 .slide-show {
   display: none;
   grid-area: slide;
-  background-color: rgb(155, 202, 100);
+  background-color: rgb(196, 228, 161);
   position: relative;
 }
 #photo-wrapper {
@@ -145,60 +192,6 @@ h1 img {
   text-shadow: 1px 1px 2px rgb(56, 23, 8), 0 0 1em rgb(253, 249, 244),
     0 0 0.2em rgb(253, 249, 244);
 }
-/*--ヘッダーメニュー---------------------------------------------------------*/
-.header-menu {
-  grid-area: h-menu;
-}
-.hamburger {
-  display: none;
-}
-.header-menu ul {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.6rem;
-}
-.header-menu ul li a {
-  display: block;
-  height: 100%;
-  line-height: 40px;
-  position: relative;
-}
-.header-menu ul li a::before {
-  content: " ";
-  display: inline-block;
-  /* height: 42px;
-  width: 19px; */
-  height: 100%;
-  width: 1em;
-  background-image: url(./img/Donguri_01.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  bottom: -0.4em;
-  left: -1.4em;
-  transition: all 0.1s;
-}
-.header-menu ul li a:hover::before {
-  background-image: url(./img/Donguri_02.png);
-  position: absolute;
-  bottom: 0px;
-}
-/*-------------------------------------------------------------------------*/
-/*ここからMAIN width = 900px--------------------------------------------------*/
-/*-------------------------------------------------------------------------*/
-main {
-  grid-area: main;
-  display: grid;
-  grid-template:
-    "info   ...... blog  " auto
-    "...... ...... ......" 80px
-    "about  about  about" auto
-    "...... ...... ......" 80px
-    "tour   tour   tour  " auto
-    / 420px 60px 420px;
-}
-
 .main-title {
   font-size: 2.4rem;
 }
@@ -250,9 +243,10 @@ article time {
 /*--ABOUT-------------------------------------------------------------------*/
 .about-us {
   grid-area: about;
+  background-color: white;
 }
 .big-h2 {
-  margin-top: 30px;
+  margin-top: 50px;
   font-size: 4.8rem;
   text-align: center;
   filter: drop-shadow(0 7px 7px rgba(56, 23, 8, 0.5));
@@ -262,6 +256,8 @@ article time {
 }
 .introduction-wrapper ul {
   height: 350px;
+  width: 900px;
+  margin: 0 auto 50px;
   display: grid;
   grid-template:
     "...... i-02   ...... i-04  " 20%
@@ -328,6 +324,8 @@ article time {
 }
 .view-wrapper {
   margin-top: 50px;
+  width: 900px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -344,7 +342,7 @@ article time {
   width: 100%;
   height: 100%;
 }
-.virtual-tour p {
+.view-wrapper p {
   margin-top: 10px;
   font-size: 1.3rem;
   text-align: right;
