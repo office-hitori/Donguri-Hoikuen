@@ -8,7 +8,7 @@
     <!--スタイルシート読み込み-->
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="stylesheet_for_SP.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="stylesheet_for_sub.css">
 
     <!--googleフォント（Yusei Magic・Kosugi） 読み込み-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,93 +17,26 @@
     <script src="https://kit.fontawesome.com/d8a1760703.js" crossorigin="anonymous"></script>
     <!--jQuery読み込み-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //共通パーツ読み込み
+          $(function() {
+               $("#header").load("header.html");
+               $("#footer").load("footer.html");
+        });
+        </script>
 </head>
 
 <body>
     <div class="deco">
     </div>
-    <header>
-        <h1>
-            <a href="/">
-                <img src="./img/Logo4.png" alt="どんぐり保育園｜くりのき町の認可保育園">
-            </a>
-        </h1>
-        <div class="header-phone brown">
-            <p class="phone-message">お気軽にお問い合わせください</p>
-            <p class="phone-message">平日 9:00 - 16:00</p>
-            <a href="tel:+81-12-3456-7890" class="phone-number yusei-magic">12-3456-7890</a>
-        </div>
-        <nav class="header-menu yusei-magic brown">
-            <ul>
-                <li>
-                    <a href="#">当園のご紹介</a>
-                </li>
-                <li>
-                    <a href="#">保育内容</a>
-                </li>
-                <li>
-                    <a href="#">給食について</a>
-                </li>
-                <li>
-                    <a href="#">採用情報</a>
-                </li>
-                <li>
-                    <a href="#">アクセス</a>
-                </li>
-                <li>
-                    <a href="#">保護者メニュー</a>
-                </li>
-            </ul>
-        </nav>
+    <header id="header">
     </header>
     <main>
-        
+        <h2 class="big-h2 brown">
+            Under construction.
+        </h2>
     </main>
-    <footer class="white">
-        <a class="footer-logo" href="#">
-            <img src="./img/Logo-mono.png" alt="">
-        </a>
-        <div class="footer-icons">
-            <a href="tel:+81-12-3456-7890">
-                <img class="footer-icon" src="./img/icon_phone.svg" alt="電話">
-            </a>
-            <a href="#">
-                <img src="./img/icon_mail.svg" alt="メールでのお問い合わせ">
-            </a>
-            <a href="#">
-                <img src="./img/icon_facebook.svg" alt="facebook">
-            </a>
-        </div>
-        <nav class="footer-menu">
-            <ul>
-                <li>
-                    <a href="#">当園のご紹介</a>
-                </li>
-                <li>
-                    <a href="#">保育内容</a>
-                </li>
-                <li>
-                    <a href="#">給食について</a>
-                </li>
-                <li>
-                    <a href="#">採用情報</a>
-                </li>
-                <li>
-                    <a href="#">アクセス</a>
-                </li>
-                <li>
-                    <a href="#">保護者メニュー</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="credit">
-            <small>Copyright © 2021 Donguri Hoikuen. All Rights Reserved.</small>
-        </div>
-        <div class="footer-deco"></div>
-        <a id="back-to-top" class="go-to-top" href="/">
-            <img src="./img/go-to-top02.png" alt="トップヘもどる">
-            <p class="yusei-magic brown">トップへ戻る</p>
-        </a>
+    <footer id="footer" class="white">
     </footer>
 
     <script src="script.js"></script>
