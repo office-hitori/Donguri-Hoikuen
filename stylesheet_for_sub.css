@@ -1,3 +1,17 @@
+body {
+  background-color: rgb(253, 249, 244);
+  display: grid;
+  grid-template:
+    "......" 10px
+    "deco  " 20px
+    "......" 20px
+    "header" auto
+    "......" 25px
+    "main  " 100vhs
+    "......" 70px
+    "footer" auto
+    / 100vw;
+}
 main {
   grid-area: main;
   display: block;
